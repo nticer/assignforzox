@@ -1,5 +1,3 @@
 # assignforzox
-
-
-
-# Test commit
+#Cloud providder = AWS
+#Build tool = Terraform
