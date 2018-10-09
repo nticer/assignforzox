@@ -1,3 +1,7 @@
 # assignforzox
-#Cloud providder = AWS
-#Build tool = Terraform
+#Tools involved
+Terraform
+#cloud provider
+AWS
+
+ 

@@ -1,0 +1,14 @@
+We will be using Terraform tool for managing the infra as code. As it is easy to configure and has version control and can provision multi tenant(cloud) resources 
+Prerequisites:
+Terroform should be installed and ready to operate along with AWS-CLI configured on the host machine
+Details:
+the ec2.tf will be having code to provision n number of ec2 instances with t2.nano model. The parameters(number of instances/VPC/Subnet etc) are configurable.
+The script basically spin the (default count2) n number of instances and also while creating the instances
+it will add mon-scripts/crontab  to send Memory utilization of ec2 instance to Cloudwatch.
+We are using cloud watch features to alert users on the CPU and Memory threshold values.
+Since memory utilization cannot be sent to cloudwatch, we are installing mon-scripts to send memory metrics to Cloudwatch
+alarms.tf file will be used to send SNS notifications in case of outages.
+
+We can include AWS auto scaling feature for spinning up ec2 instances using these cloudwatch metrics in case of outages(not covered)
+
+About the Dash board, we can use the cloud watch console or make use of any monitoring tool like Nagios/new relic (not inculded in the scripts).
